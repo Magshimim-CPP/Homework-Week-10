@@ -1,10 +1,13 @@
 #pragma once
+#include<exception>
+#include<string>
 #include<iostream>
 #include<string>
 
 using std::string;
 
 enum ItemCategory {NONE = 0, FOOD = 1, PHARM = 2, CLEANING = 3, HOME = 4};
+
 
 static std::string getItemCategoryString(const ItemCategory type)
 {
@@ -44,9 +47,9 @@ public:
 
 private:
 
+    int _count;
     string _name;
     string _serialNumber;
-    int _count;
     double _unitPrice;
     ItemCategory _category;
 
