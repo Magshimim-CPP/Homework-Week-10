@@ -128,10 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Store.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Test1Item.cpp" />
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="Test2Store.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InventoryIKEA.csv" />
+    <None Include="InventoryPharm.csv" />
+    <None Include="InventorySuperMarket.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
