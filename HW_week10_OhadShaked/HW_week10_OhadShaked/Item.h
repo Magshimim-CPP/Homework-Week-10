@@ -2,6 +2,8 @@
 #include<iostream>
 #include<string>
 
+using std::string;
+
 enum ItemCategory {NONE = 0, FOOD = 1, PHARM = 2, CLEANING = 3, HOME = 4};
 
 static std::string getItemCategoryString(const ItemCategory type)
@@ -23,37 +25,29 @@ class Item
 {
 public:
 
-	/////////////////
-    // Constructor //
-    /////////////////
+    Item(string name, string serialNumber, double unitPrice, ItemCategory category);
+    ~Item();
 
-	/* Complete by yourself */
-
-	/////////////
-    // methods //
-    /////////////
 	double totalPrice() const; //returns _count * _unitPrice
 	
-	///////////////
-    // operators //
-    ///////////////
 	bool operator <(const Item& other) const; //compares the _serialNumber of those items.
 	bool operator >(const Item& other) const; //compares the _serialNumber of those items.
 	bool operator ==(const Item& other) const; //compares the _serialNumber of those items.
 	friend std::ostream& operator<<(std::ostream& os, const Item& item);
 
-	/////////////////////////
-    // getters and setters //
-    /////////////////////////
-
-	/* Complete by yourself */
+    string getName() const;
+    string getSerial() const;
+    double getPrice() const;
+    int getCount() const;
+    ItemCategory getCategory() const;
+    void setCount(int newCount);
 
 private:
 
-	////////////
-    // Fields //
-    ////////////
-
-	/* Complete by yourself */
+    string _name;
+    string _serialNumber;
+    int _count;
+    double _unitPrice;
+    ItemCategory _category;
 
 };
