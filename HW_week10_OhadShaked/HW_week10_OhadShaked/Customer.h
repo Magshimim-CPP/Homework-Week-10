@@ -1,34 +1,35 @@
 #pragma once
-#include"Item.h"
-#include<set>
-#include<map>
+#include "Item.h"
+#include <set>
+#include <map>
+
+using std::string;
 
 class Customer
 {
 public:
 	// constructors
-	Customer(std::string);
+	Customer(string name);
 	Customer();
 
 	// destructors
 	~Customer();
 	
 	// methods
-	
-	double shoppingCartSum(std::string shoppingCartName); // returns the payment sum for a given shopping cart;
+	void createNewShoppingCart(string shoppingCartName);
+	double shoppingCartSum(string shoppingCartName) const; // returns the payment sum for a given shopping cart;
 	double totalSum();//returns the total sum for payment
 
-	void addItem(Item, std::string shoppingCartName);//add item to the set
-	void removeItem(Item, std::string shoppingCartName);//remove item from the set
+	void addItem(const Item& item, string shoppingCartName);//add item to the set
+	void removeItem(const Item& item, string shoppingCartName);//remove item from the set
 
 	//get and set functions
 
-	std::string getName();	// returns the customer name
-	std::set<Item>* getShoppingCart(std::string shoppingCartName) ; // returns the shopping cart with the given name
+	string getName() const;	// returns the customer name
+	std::map<string, std::set<Item>*> getShoppingCarts() const;
+	std::set<Item>* getShoppingCart(string shoppingCartName) const; // returns the shopping cart with the given name
 
 private:
-	std::string _name; // Customer name
-	std::map<std::string, std::set<Item>*> _shoppingCarts; // Shopping carts
-
-
+	string _name; // Customer name
+	std::map<string, std::set<Item>*> _shoppingCarts; // Shopping carts
 };

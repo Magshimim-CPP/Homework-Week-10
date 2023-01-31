@@ -127,13 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Store.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Store.cpp" />
-    <ClCompile Include="Test2Store.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="InventoryIKEA.csv" />
